@@ -46,8 +46,8 @@ userSchema.methods.setJWT = async function (req, res) {
 };
 userSchema.methods.passwordCheck = async function (userPass) {
   const user = this;
+ 
   const validPass = await bcrypt.compare(userPass, user.password);
-
   return validPass;
 };
 
