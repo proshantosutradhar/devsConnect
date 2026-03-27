@@ -11,7 +11,7 @@ const path = require('path')
 const _dirname = path.resolve()
 
 const corsOptions = {
-  origin: "http://localhost:5173",
+  origin: "https://devsconnect-v1.onrender.com/",
   credentials: true,
 };
 
