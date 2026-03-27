@@ -3,7 +3,7 @@ const { userAuth, updateValidation } = require("../utils/validator");
 
 const profileRouter = express.Router();
 
-profileRouter.get("/profile/view", userAuth, async (req, res) => {
+profileRouter.get("/api/profile/view", userAuth, async (req, res) => {
   try {
     res.send("profile details " + req.user);
   } catch (err) {
@@ -11,7 +11,7 @@ profileRouter.get("/profile/view", userAuth, async (req, res) => {
   }
 });
 
-profileRouter.patch("/profile/edit", userAuth, async (req, res) => {
+profileRouter.patch("/api/profile/edit", userAuth, async (req, res) => {
   try {
     const loggedUser = req.user;
     updateValidation(req);
@@ -26,7 +26,7 @@ profileRouter.patch("/profile/edit", userAuth, async (req, res) => {
 });
 
 
-profileRouter.patch("/profile/password", userAuth, async (req, res) => {
+profileRouter.patch("/api/profile/password", userAuth, async (req, res) => {
   try {
     const { password, newPass } = req.body;
 

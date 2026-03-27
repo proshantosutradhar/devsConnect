@@ -5,7 +5,7 @@ const User = require("../models/user");
 
 const requestRouter = express.Router();
 
-requestRouter.post("/request/:status/:toUserId", userAuth, async (req, res) => {
+requestRouter.post("/api/request/:status/:toUserId", userAuth, async (req, res) => {
   try {
     const fromUserId = req.user._id;
     const toUserId = req.params.toUserId;
@@ -54,7 +54,7 @@ requestRouter.post("/request/:status/:toUserId", userAuth, async (req, res) => {
   }
 });
 
-requestRouter.patch("/request/review/:status/:requestId", userAuth, async (req, res)=>{
+requestRouter.patch("/api/request/review/:status/:requestId", userAuth, async (req, res)=>{
     try{
 
     const loggedInUserId = req.user._id;

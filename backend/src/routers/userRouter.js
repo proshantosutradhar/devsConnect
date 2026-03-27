@@ -15,7 +15,7 @@ const dataToProvide = [
   "skills",
   "bio",
 ];
-userRouter.get("/user/requests/received", userAuth, async (req, res) => {
+userRouter.get("/api/user/requests/received", userAuth, async (req, res) => {
   try {
     const loggedInUser = req.user;
 
@@ -35,7 +35,7 @@ userRouter.get("/user/requests/received", userAuth, async (req, res) => {
   }
 });
 
-userRouter.get("/user/requests/matches", userAuth, async (req, res) => {
+userRouter.get("/api/user/requests/matches", userAuth, async (req, res) => {
   try {
     const loggedInUser = req.user;
     const matches = await ConnectionRequestModel.find({
@@ -69,7 +69,7 @@ userRouter.get("/user/requests/matches", userAuth, async (req, res) => {
   }
 });
 
-userRouter.get("/user/feed", userAuth, async (req, res) => {
+userRouter.get("/api/user/feed", userAuth, async (req, res) => {
   try {
 
     const page = parseInt(req.query.page) || 1;

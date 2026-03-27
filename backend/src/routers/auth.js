@@ -6,7 +6,7 @@ const { validateFun } = require("../utils/validator");
 
 const authRouter = express.Router();
 
-authRouter.post("/signup", async (req, res) => {
+authRouter.post("/api/signup", async (req, res) => {
   const { firstName, lastName, email, password, photoUrl, bio, skills } =
     req?.body;
   const user = new User({
@@ -30,7 +30,7 @@ authRouter.post("/signup", async (req, res) => {
   }
 });
 
-authRouter.post("/login", async (req, res) => {
+authRouter.post("/api/login", async (req, res) => {
   const { email, password } = req.body;
   try {
     const user = await User.findOne({ email }).select("+password");
@@ -50,7 +50,7 @@ authRouter.post("/login", async (req, res) => {
   }
 });
 
-authRouter.post("/logout", (req, res) => {
+authRouter.post("/api/logout", (req, res) => {
   res.clearCookie("token");
   res.send("logout sucessfull");
 });

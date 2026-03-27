@@ -1,1 +1,1 @@
-export const BASE_URL = 'https://devsconnect-v1.onrender.com';
+export const BASE_URL = 'https://devsconnect-v1.onrender.com/api';
