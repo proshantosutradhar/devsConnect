@@ -14,7 +14,7 @@ function App() {
   return (
     <BrowserRouter basename="/">
     <Routes>
-  <Route path="/" element={<Body />}>
+  <Route path="/" element={<Body /> || index.html}>
     <Route index element={<Login />} />
     <Route path="*" element={<ProtectedRoute />} />
     <Route path="login" element={<Login />} />

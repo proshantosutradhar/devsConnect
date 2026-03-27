@@ -38,7 +38,7 @@ app.use("/", chatRouter);
 
 app.use(express.static(path.join(_dirname, "/frontend/dist")))
 app.get(
-  (req,res)=>{
+  (_,res)=>{
   res.sendFile(path.resolve(_dirname, 'frontend', 'dist', 'index.html'))
 })
 
