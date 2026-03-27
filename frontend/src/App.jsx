@@ -12,15 +12,14 @@ import ChatBox from "./components/ChatBox";
 
 function App() {
   return (
-    <BrowserRouter basename="/">
+    
     <Routes>
-  <Route path="/" element={<Body /> || index.html}>
+  <Route path="/" element={<Body />}>
     <Route index element={<Login />} />
     <Route path="*" element={<ProtectedRoute />} />
     <Route path="login" element={<Login />} />
     <Route path="signup" element={<Signup />} />
 
-    
     <Route element={<ProtectedRoute />}>
       <Route path="feed" element={<Feed />} />
       <Route path="connections" element={<Connections />} />
@@ -32,7 +31,7 @@ function App() {
 
   </Route>
 </Routes>
-    </BrowserRouter>
+    
   );
 }
 
