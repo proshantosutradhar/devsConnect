@@ -5,7 +5,7 @@ const ChatModel = require("../models/chat");
 const initializeSocket = (server) => {
   const io = socket(server, {
     cors: {
-      origin: "https://devsconnect-v1.onrender.com/",
+      origin: "https://devsconnect-v1.onrender.com",
     },
   });
 
