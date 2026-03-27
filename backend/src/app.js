@@ -37,10 +37,12 @@ app.use("/", userRouter);
 app.use("/", chatRouter);
 
 app.use(express.static(path.join(_dirname, "/frontend/dist")))
-app.get('*',
-  (_,res)=>{
-  res.sendFile(path.resolve(_dirname, 'frontend', 'dist', 'index.html'))
-})
+app.get(
+  (_,res, next)=>{
+  if (req.method === "GET" && !req.path.startsWith("/api")) {
+    res.sendFile(path.join(buildPath, "index.html"));
+  } else {
+    next()}})
 
 //connecting DB and server starting
 connectDB()
