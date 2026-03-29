@@ -12,7 +12,7 @@ export const createSocketConnection = () => {
      socket = io(BASE_URL);
 
   } else{
-     socket = io("/", {path: "api/socket.io"})
+     socket = io("/", {path: "/api/socket.io"})
   }
 
   return socket;
